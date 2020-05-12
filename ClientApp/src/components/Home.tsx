@@ -24,7 +24,7 @@ export function Home() {
       image: "https://www.edamam.com/web-img/e42/e42f9119813e890af34c259785ae1cfb.jpg",
       shareAs: "https://google.com",
       source: "Google",
-      yield: 10.5,
+      yield: 4.0,
       dietLabels: [],
       healthLabels: [],
       cautions: [],

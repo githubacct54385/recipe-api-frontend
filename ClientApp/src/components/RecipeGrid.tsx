@@ -1,6 +1,6 @@
 import React from 'react'
 import Recipe from '../models/Recipe'
-import "../styles/RecipeStyles.css";
+import "../styles/AppStyles.css";
 
 interface Props {
     recipes: Recipe[];
@@ -31,8 +31,14 @@ interface SingleRecipeProps {
 const SingleRecipe = (props: SingleRecipeProps) => {
     return (
         <div className="recipe-item">
-            <img src={props.recipe.image} />
-            <p>{props.recipe.label}</p>
+            <div className="img-wrapper">
+                <img src={props.recipe.image} />
+            </div>
+            <p className="label">{props.recipe.label}</p>
+            <p className="servings">{props.recipe.yield} servings</p>
+            <div className="btn-wrap">
+                <button className="seeMore">See Info</button>
+            </div>
         </div>
     )
 }

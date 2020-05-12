@@ -2,6 +2,15 @@
     "version": "2.0.0",
     "tasks": [
         {
+            "label": "Sass Compile",
+            "type": "shell",
+            "command": "node-sass ./ClientApp/src/styles/AppStyles.scss ./ClientApp/src/styles/AppStyles.css",
+            "group": "build",
+            "problemMatcher": [
+                "$node-sass"
+            ]
+        },
+        {
             "label": "build",
             "command": "dotnet",
             "type": "process",

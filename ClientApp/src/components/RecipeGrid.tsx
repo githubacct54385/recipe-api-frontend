@@ -18,7 +18,7 @@ const RecipeGrid = (props: Props) => {
     return (
         <div className="recipe-grid">
             {recipesArray.map(r => (
-                <SingleRecipe recipe={r} />
+                <SingleRecipe key={r.id} recipe={r} />
             ))}
         </div>
     )
@@ -35,7 +35,11 @@ const SingleRecipe = (props: SingleRecipeProps) => {
                 <img src={props.recipe.image} />
             </div>
             <p className="label">{props.recipe.label}</p>
-            <p className="servings">{props.recipe.yield} servings</p>
+            {/* <p className="servings">{props.recipe.yield} servings</p> */}
+            <div className="details">
+                <div className="servings">{props.recipe.yield} servings</div>
+                <div className="totalTime">{props.recipe.totalTime} minutes</div>
+            </div>
             <div className="btn-wrap">
                 <button className="seeMore">See Info</button>
             </div>

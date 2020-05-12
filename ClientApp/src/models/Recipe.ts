@@ -14,4 +14,6 @@ export default interface Recipe {
     cautions: string[];
     ingredientLines: string[];
     ingredients: Ingredient[];
+    calories: number;
+    totalTime: number;
 }

@@ -1,3 +1,39 @@
+/*
+=========================
+Search Bar Styles
+=========================
+*/
+.search-bar-wrapper {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center; }
+  .search-bar-wrapper input[type=text].search-input {
+    border-radius: 5px;
+    line-height: 30px;
+    width: 280px;
+    min-width: 100px; }
+  .search-bar-wrapper .search-btn {
+    height: 35px;
+    border: transparent;
+    text-transform: uppercase;
+    background-color: #ce2737;
+    color: #fff;
+    border-radius: 5px;
+    padding: 0 5px;
+    margin: 0 15px;
+    width: auto;
+    transition: background-color 0.2s; }
+    .search-bar-wrapper .search-btn:hover {
+      background-color: #750c0c; }
+  .search-bar-wrapper .search-btn:disabled {
+    background-color: #c48b8b; }
+
+/*
+=========================
+Recipe Styles
+=========================
+*/
 .recipe-grid .recipe-item {
   border: 1px solid #000;
   box-shadow: 2px 2px 2px #a09090; }
@@ -11,17 +47,22 @@
       margin: 10px 0; }
   .recipe-grid .recipe-item p.label {
     display: flex;
+    font-size: 1.5rem;
     align-items: center;
     justify-content: center;
     transition: color 0.2s;
     margin-bottom: 0.5rem; }
     .recipe-grid .recipe-item p.label:hover {
-      color: blue;
+      color: #750c0c;
       cursor: pointer; }
   .recipe-grid .recipe-item p.servings {
     display: flex;
     align-items: center;
     justify-content: center; }
+  .recipe-grid .recipe-item .details {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center; }
   .recipe-grid .recipe-item .btn-wrap {
     display: flex;
     justify-content: center;
@@ -34,11 +75,11 @@
       color: #fff;
       border-radius: 5px;
       padding: 5px 5px;
-      margin: -10px 0 10px 0;
+      margin: 0 0 10px 0;
       width: 50%;
       transition: background-color 0.2s; }
       .recipe-grid .recipe-item .btn-wrap button.seeMore:hover {
-        background-color: darkred; }
+        background-color: #750c0c; }
 
 @media only screen and (max-width: 768px) {
   /* For mobile phones: */

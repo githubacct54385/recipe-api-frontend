@@ -1,4 +1,5 @@
 import React from 'react'
+import "../styles/AppStyles.css";
 
 interface Props {
     isSearching: boolean;
@@ -16,7 +17,7 @@ const SearchButton = (props: Props) => {
 
 const DisabledButton = () => {
     return (
-        <button className="btn btn-primary" disabled>Search</button>
+        <button className="search-btn" disabled>Search</button>
     )
 }
 
@@ -26,7 +27,7 @@ interface NormalButtonProps {
 
 const NormalButton = (props: NormalButtonProps) => {
     return (
-        <button className="btn btn-primary" onClick={() => props.toggleSearch()}>Search</button>
+        <button className="search-btn" onClick={() => props.toggleSearch()}>Search</button>
     )
 }
 

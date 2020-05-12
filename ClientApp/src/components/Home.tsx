@@ -3,6 +3,7 @@ import RecipeSearch from "./RecipeSearch";
 import SearchButton from "./SearchButton";
 import RecipeGrid from "./RecipeGrid";
 import Recipe from "../models/Recipe";
+import "../styles/AppStyles.css";
 
 export function Home() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -29,9 +30,29 @@ export function Home() {
       healthLabels: [],
       cautions: [],
       ingredientLines: [],
-      ingredients: []
+      ingredients: [],
+      calories: 4055.76,
+      totalTime: 60.0
     }
     recipes.push(recipeOne);
+    let recipeTwo: Recipe = {
+      id: "456",
+      label: "Chicken Paprikash",
+      url: "http://norecipes.com/recipe/chicken-paprikash/",
+      uri: "http://www.edamam.com/ontologies/edamam.owl#recipe_8275bb28647abcedef0baaf2dcf34f8b",
+      image: "https://www.edamam.com/web-img/e12/e12b8c5581226d7639168f41d126f2ff.jpg",
+      shareAs: "http://www.edamam.com/recipe/chicken-paprikash-8275bb28647abcedef0baaf2dcf34f8b/chicken",
+      source: "No Recipes",
+      yield: 4.0,
+      dietLabels: [],
+      healthLabels: [],
+      cautions: [],
+      ingredientLines: [],
+      ingredients: [],
+      calories: 3033.20,
+      totalTime: 0.0
+    }
+    recipes.push(recipeTwo);
 
     return recipes;
   }
@@ -41,8 +62,10 @@ export function Home() {
   }
   return (
     <div>
-      <RecipeSearch value={searchTerm} onChange={setSearchTerm} />
-      <SearchButton isSearching={isSearching} toggleSearch={() => handleSearchClick()} />
+      <div className="search-bar-wrapper">
+        <RecipeSearch value={searchTerm} onChange={setSearchTerm} />
+        <SearchButton isSearching={isSearching} toggleSearch={() => handleSearchClick()} />
+      </div>
       <RecipeGrid recipes={recipes} />
     </div>
   );

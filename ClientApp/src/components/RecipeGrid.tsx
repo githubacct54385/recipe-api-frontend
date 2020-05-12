@@ -35,7 +35,6 @@ const SingleRecipe = (props: SingleRecipeProps) => {
                 <img src={props.recipe.image} />
             </div>
             <p className="label">{props.recipe.label}</p>
-            {/* <p className="servings">{props.recipe.yield} servings</p> */}
             <div className="details">
                 <div className="servings">{props.recipe.yield} servings</div>
                 <div className="totalTime">{props.recipe.totalTime} minutes</div>

@@ -1,9 +1,13 @@
 import React from 'react'
 import Recipe from '../models/Recipe'
 import "../styles/AppStyles.css";
+import ModalStatus from '../models/ModalStatus';
 
 interface Props {
     recipes: Recipe[];
+    modalStatus: ModalStatus;
+    setModalToRecipe: (recipeId: string) => void;
+    clearModal: () => void;
 }
 
 const RecipeGrid = (props: Props) => {

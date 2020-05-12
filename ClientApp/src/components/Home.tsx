@@ -3,15 +3,18 @@ import RecipeSearch from "./RecipeSearch";
 import SearchButton from "./SearchButton";
 import RecipeGrid from "./RecipeGrid";
 import Recipe from "../models/Recipe";
+import ModalStatus from "../models/ModalStatus";
 import "../styles/AppStyles.css";
 
 export function Home() {
   const [searchTerm, setSearchTerm] = useState("");
   const [isSearching, setIsSearching] = useState(false);
   const [recipes, setRecipes] = useState([] as Recipe[]);
+  const [modalStatus, setModalStatus] = useState({} as ModalStatus);
 
   useEffect(() => {
     setRecipes(fakeRecipes());
+    setModalStatus({ isModal: false, recipeId: undefined });
   }, [])
 
   const fakeRecipes = (): Recipe[] => {
@@ -57,16 +60,27 @@ export function Home() {
     return recipes;
   }
 
+  // event handlers
+
   const handleSearchClick = () => {
     setIsSearching(true);
   }
+
+  const handleSetModalToRecipe = (recipeId: string) => {
+    setModalStatus({ isModal: true, recipeId: recipeId });
+  }
+
+  const handleClearModal = () => {
+    setModalStatus({ isModal: false, recipeId: undefined });
+  }
+
   return (
     <div>
       <div className="search-bar-wrapper">
         <RecipeSearch value={searchTerm} onChange={setSearchTerm} />
         <SearchButton isSearching={isSearching} toggleSearch={() => handleSearchClick()} />
       </div>
-      <RecipeGrid recipes={recipes} />
+      <RecipeGrid recipes={recipes} modalStatus={modalStatus} setModalToRecipe={handleSetModalToRecipe} clearModal={handleClearModal} />
     </div>
   );
 }

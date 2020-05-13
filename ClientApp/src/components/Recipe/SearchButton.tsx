@@ -1,34 +1,31 @@
-import React from 'react'
+import React, { useContext } from "react";
 import "../../styles/AppStyles.css";
+import AppContext from "../../context/AppContext";
 
-interface Props {
-    isSearching: boolean;
-    toggleSearch: () => void;
-}
-
-const SearchButton = (props: Props) => {
-    if (props.isSearching) {
-        return <DisabledButton />
-    }
-    else {
-        return <NormalButton toggleSearch={props.toggleSearch} />
-    }
-}
+const SearchButton = () => {
+  const { isSearching } = useContext(AppContext);
+  if (isSearching) {
+    return <DisabledButton />;
+  } else {
+    return <NormalButton />;
+  }
+};
 
 const DisabledButton = () => {
-    return (
-        <button className="search-btn" disabled>Search</button>
-    )
-}
+  return (
+    <button className="search-btn" disabled>
+      Search
+    </button>
+  );
+};
 
-interface NormalButtonProps {
-    toggleSearch: () => void;
-}
+const NormalButton = () => {
+  const { toggleSearch } = useContext(AppContext);
+  return (
+    <button className="search-btn" onClick={() => toggleSearch()}>
+      Search
+    </button>
+  );
+};
 
-const NormalButton = (props: NormalButtonProps) => {
-    return (
-        <button className="search-btn" onClick={() => props.toggleSearch()}>Search</button>
-    )
-}
-
-export default SearchButton
+export default SearchButton;

@@ -1,15 +1,19 @@
-import React from 'react';
+import React, { useContext } from "react";
 import "../../styles/AppStyles.css";
+import AppContext from "../../context/AppContext";
 
-interface Props {
-    value: string;
-    onChange: (str: string) => void;
-}
+const RecipeSearch = () => {
+  const { searchTerm, setSearchTerm, isSearching } = useContext(AppContext);
+  return (
+    <input
+      disabled={isSearching}
+      className="search-input"
+      type="text"
+      placeholder="Search a raw ingredient or ingredient"
+      value={searchTerm}
+      onChange={(e) => setSearchTerm(e.target.value)}
+    />
+  );
+};
 
-const RecipeSearch = (props: Props) => {
-    return (
-        <input className="search-input" type="text" placeholder="Search a raw ingredient or ingredient" value={props.value} onChange={e => props.onChange(e.target.value)} />
-    )
-}
-
-export default RecipeSearch
+export default RecipeSearch;

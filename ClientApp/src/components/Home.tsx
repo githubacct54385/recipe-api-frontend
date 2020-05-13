@@ -5,7 +5,6 @@ import RecipeGrid from "./Recipe/RecipeGrid";
 import Recipe from "../models/Recipe";
 import ModalStatus from "../models/ModalStatus";
 import "../styles/AppStyles.css";
-import AppContextState from "../context/AppContextState";
 import AppContext from "../context/AppContext";
 
 export function Home() {

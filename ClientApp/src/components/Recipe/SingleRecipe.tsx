@@ -14,7 +14,7 @@ const SingleRecipe = (props: SingleRecipeProps) => {
       <div className="img-wrapper">
         <img src={props.recipe.image} />
       </div>
-      <a href={props.recipe.url} className="label">
+      <a target="_blank" href={props.recipe.url} className="label">
         {props.recipe.label}
       </a>
       <div className="details">

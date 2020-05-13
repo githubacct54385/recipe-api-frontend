@@ -67,6 +67,7 @@ Recipe Styles
     }
 
     a.label {
+      color: $red;
       display: flex;
       font-size: 1.5rem;
       align-items: center;
@@ -76,6 +77,7 @@ Recipe Styles
       &:hover {
         color: $hightlight-color;
         cursor: pointer;
+        text-decoration: none;
       }
     }
 
@@ -111,6 +113,44 @@ Recipe Styles
         }
       }
     }
+  }
+}
+
+/*
+=========================
+Modal Styles
+=========================
+*/
+
+.modal-body-grid {
+  display: grid;
+  width: 100%;
+  height: auto;
+  grid-template-columns: 1fr 3fr;
+  background-color: #fff;
+
+  .ingredients,
+  .instructions {
+    p.header {
+      color: $red;
+      font-size: 1.5rem;
+    }
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      li {
+        list-style: decimal outside;
+        color: #000;
+      }
+    }
+  }
+
+  .ingredients {
+  }
+
+  .instructions {
   }
 }
 

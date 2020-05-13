@@ -7,7 +7,7 @@ export default interface AppContextState {
   searchTerm: string;
   isSearching: boolean;
   setSearchTerm: (searchTerm: string) => void;
-  toggleSearch: () => void;
+  toggleSearch: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
   setModalToRecipe: (
     e: React.MouseEvent<HTMLButtonElement, MouseEvent>,
     recipe: Recipe

@@ -8,7 +8,7 @@ Search Bar Styles
   width: 100%;
   justify-content: center;
   align-items: center; }
-  .search-bar-wrapper input[type=text].search-input {
+  .search-bar-wrapper input[type="text"].search-input {
     border-radius: 5px;
     line-height: 30px;
     width: 280px;
@@ -45,14 +45,14 @@ Recipe Styles
     .recipe-grid .recipe-item .img-wrapper img {
       width: 75%;
       margin: 10px 0; }
-  .recipe-grid .recipe-item p.label {
+  .recipe-grid .recipe-item a.label {
     display: flex;
     font-size: 1.5rem;
     align-items: center;
     justify-content: center;
     transition: color 0.2s;
     margin-bottom: 0.5rem; }
-    .recipe-grid .recipe-item p.label:hover {
+    .recipe-grid .recipe-item a.label:hover {
       color: #750c0c;
       cursor: pointer; }
   .recipe-grid .recipe-item p.servings {
@@ -91,9 +91,10 @@ Recipe Styles
     margin-top: 20px; } }
 
 @media only screen and (min-width: 768px) {
-  /* For mobile phones: */
+  /* For larger displays: */
   .recipe-grid {
     display: grid;
     width: 100%;
     grid-template-columns: 1fr 1fr;
+    gap: 10px;
     margin-top: 20px; } }

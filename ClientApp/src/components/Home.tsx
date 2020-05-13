@@ -26,12 +26,14 @@ export function Home() {
       id: "123",
       label: "Chicken Vesuvio",
       url:
+        "http://www.seriouseats.com/recipes/2011/12/chicken-vesuvio-recipe.html",
+      uri:
         "http://www.edamam.com/ontologies/edamam.owl#recipe_b79327d05b8e5b838ad6cfd9576b30b6",
-      uri: "https://google.com",
       image:
         "https://www.edamam.com/web-img/e42/e42f9119813e890af34c259785ae1cfb.jpg",
-      shareAs: "https://google.com",
-      source: "Google",
+      shareAs:
+        "http://www.edamam.com/recipe/chicken-vesuvio-b79327d05b8e5b838ad6cfd9576b30b6/chicken",
+      source: "Serious Eats",
       yield: 4.0,
       dietLabels: [],
       healthLabels: [],
@@ -40,6 +42,7 @@ export function Home() {
       ingredients: [],
       calories: 4055.76,
       totalTime: 60.0,
+      totalWeight: 2765.59,
     };
     recipes.push(recipeOne);
     let recipeTwo: Recipe = {
@@ -61,6 +64,7 @@ export function Home() {
       ingredients: [],
       calories: 3033.2,
       totalTime: 0.0,
+      totalWeight: 1824.61,
     };
     recipes.push(recipeTwo);
 

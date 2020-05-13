@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import RecipeSearch from "./RecipeSearch";
-import SearchButton from "./SearchButton";
-import RecipeGrid from "./RecipeGrid";
+import RecipeSearch from "./Recipe/RecipeSearch";
+import SearchButton from "./Recipe/SearchButton";
+import RecipeGrid from "./Recipe/RecipeGrid";
 import Recipe from "../models/Recipe";
 import ModalStatus from "../models/ModalStatus";
 import "../styles/AppStyles.css";
@@ -14,7 +14,7 @@ export function Home() {
 
   useEffect(() => {
     setRecipes(fakeRecipes());
-    setModalStatus({ isModal: false, recipeId: undefined });
+    setModalStatus({ isOpen: false, recipe: undefined });
   }, [])
 
   const fakeRecipes = (): Recipe[] => {
@@ -66,12 +66,13 @@ export function Home() {
     setIsSearching(true);
   }
 
-  const handleSetModalToRecipe = (recipeId: string) => {
-    setModalStatus({ isModal: true, recipeId: recipeId });
+  const handleSetModalToRecipe = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>, recipe: Recipe) => {
+    e.preventDefault();
+    setModalStatus({ isOpen: true, recipe: recipe });
   }
 
   const handleClearModal = () => {
-    setModalStatus({ isModal: false, recipeId: undefined });
+    setModalStatus({ isOpen: false, recipe: undefined });
   }
 
   return (

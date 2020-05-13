@@ -1,4 +1,6 @@
+import Recipe from "./Recipe";
+
 export default interface ModalStatus {
-    isModal: boolean;
-    recipeId?: string;
+    isOpen: boolean;
+    recipe?: Recipe;
 }

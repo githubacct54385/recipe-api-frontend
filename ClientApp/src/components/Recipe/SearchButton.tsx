@@ -1,5 +1,5 @@
 import React from 'react'
-import "../styles/AppStyles.css";
+import "../../styles/AppStyles.css";
 
 interface Props {
     isSearching: boolean;

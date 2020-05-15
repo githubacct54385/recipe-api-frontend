@@ -11,16 +11,23 @@ import SearchParams from "../models/SearchParams";
 import RecipePayload from "../models/RecipePayload";
 import Hit from "../models/Hit";
 import Warning from "./Recipe/Warning";
+import Pagination from "../models/pagination";
 
 export function Home() {
   const [searchTerm, setSearchTerm] = useState("");
+  const [lastQuery, setLastQuery] = useState("");
   const [isSearching, setIsSearching] = useState(false);
   const [recipes, setRecipes] = useState([] as Recipe[]);
   const [modalStatus, setModalStatus] = useState({} as ModalStatus);
   const [searchWarning, setSearchWarning] = useState("");
+  const [pagination, setPagination] = useState({
+    from: 0,
+    to: 10,
+    more: false,
+    count: 0,
+  } as Pagination);
 
   useEffect(() => {
-    //setRecipes([]);
     setModalStatus({ isOpen: false, recipe: undefined });
   }, []);
 
@@ -35,8 +42,8 @@ export function Home() {
     // get first ten
     const searchParams: SearchParams = {
       searchTerm: searchTerm,
-      from: 0,
-      to: 10,
+      from: pagination.from,
+      to: pagination.to,
     };
 
     // do search and retrieve from API
@@ -50,11 +57,23 @@ export function Home() {
     // if hits length is > 0, you have recipes
     if (recipePayload.hits.length > 0) {
       setRecipesToState(recipePayload.hits);
+      handleSetPagination(recipePayload);
     } else {
       // otherwise the results turned up with nothing
       // the state should be reset to an empty array
       setRecipes([]);
+      setPagination({ from: 0, to: 10, more: false, count: 0 });
     }
+  };
+
+  const handleSetPagination = (recipePayload: RecipePayload) => {
+    setLastQuery(recipePayload.q);
+    setPagination({
+      from: recipePayload.from,
+      to: recipePayload.to,
+      more: recipePayload.more,
+      count: recipePayload.count,
+    });
   };
 
   const handleWarning = (warning: string) => {
@@ -107,6 +126,8 @@ export function Home() {
           handleClearModal(e),
         searchWarning: searchWarning,
         setSearchWarning: (warn: string) => setSearchWarning(warn),
+        pagination: pagination,
+        lastQuery: lastQuery,
       }}
     >
       <div className="search-bar-wrapper">

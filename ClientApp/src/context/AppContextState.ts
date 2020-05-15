@@ -1,5 +1,6 @@
 import Recipe from "../models/Recipe";
 import ModalStatus from "../models/ModalStatus";
+import Pagination from "../models/pagination";
 
 export default interface AppContextState {
   recipes: Recipe[];
@@ -15,4 +16,6 @@ export default interface AppContextState {
   clearModal: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
   searchWarning: string;
   setSearchWarning: (warn: string) => void;
+  pagination: Pagination;
+  lastQuery: string;
 }

@@ -4,6 +4,7 @@ import RecipeModal from "./RecipeModal";
 import AppContext from "../../context/AppContext";
 import SingleRecipe from "./SingleRecipe";
 import Loader from "./Loader";
+import SearchSummary from "./SearchSummary";
 
 const RecipeGrid = () => {
   const { recipes, modalStatus, isSearching } = useContext(AppContext);
@@ -19,6 +20,7 @@ const RecipeGrid = () => {
   return (
     <div>
       <RecipeModal recipe={modalStatus.recipe} />
+      <SearchSummary />
       <div className="recipe-grid">
         {recipes.map((r) => (
           <SingleRecipe key={r.id} recipe={r} />

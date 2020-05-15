@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Source+Serif+Pro&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@400;500&display=swap");
 /*
 =========================
 Search Bar Styles
@@ -10,7 +10,7 @@ Search Bar Styles
   justify-content: center;
   align-items: center;
   max-width: 400px;
-  font-family: "Source Serif Pro", serif; }
+  font-family: "Oswald", sans-serif; }
   .search-bar-wrapper input[type="text"].search-input {
     border-radius: 5px;
     line-height: 30px;
@@ -43,7 +43,7 @@ Warning Styles
 =========================
 */
 .warning-wrapper {
-  font-family: "Source Serif Pro", serif;
+  font-family: "Oswald", sans-serif;
   display: flex;
   width: 100%;
   justify-content: center;
@@ -57,7 +57,7 @@ Warning Styles
     color: #fff;
     padding: 5px 0;
     font-size: 12px;
-    font-family: "Source Serif Pro", serif; }
+    font-family: "Oswald", sans-serif; }
 
 /*
 =========================
@@ -100,7 +100,7 @@ Recipe Styles
 =========================
 */
 .recipe-grid {
-  font-family: "Source Serif Pro", serif; }
+  font-family: "Oswald", sans-serif; }
   .recipe-grid .recipe-item {
     border: 1px solid #000;
     box-shadow: 2px 2px 2px #a09090; }
@@ -160,7 +160,7 @@ Modal Styles
 =========================
 */
 .modal-body-grid {
-  font-family: "Source Serif Pro", serif;
+  font-family: "Oswald", sans-serif;
   display: grid;
   width: 100%;
   height: auto;

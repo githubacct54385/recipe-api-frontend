@@ -14,14 +14,16 @@ const SingleRecipe = (props: SingleRecipeProps) => {
       <div className="img-wrapper">
         <img src={props.recipe.image} alt={props.recipe.label} />
       </div>
-      <a
-        target="_blank"
-        rel="noopener noreferrer"
-        href={props.recipe.url}
-        className="label"
-      >
-        {props.recipe.label}
-      </a>
+      <div className="link-wrapper">
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href={props.recipe.url}
+          className="label"
+        >
+          {props.recipe.label}
+        </a>
+      </div>
       <div className="details">
         <div className="servings">{props.recipe.yield} servings</div>
         <RecipeTotalTime totalTime={props.recipe.totalTime} />

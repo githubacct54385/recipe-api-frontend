@@ -13,4 +13,6 @@ export default interface AppContextState {
     recipe: Recipe
   ) => void;
   clearModal: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
+  searchWarning: string;
+  setSearchWarning: (warn: string) => void;
 }

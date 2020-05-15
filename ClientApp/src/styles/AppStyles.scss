@@ -1,8 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Serif+Pro&display=swap");
+
 $font-color: #000;
 $red: #ce2737;
 $hightlight-color: #750c0c;
 $box-shadow: rgb(160, 144, 144);
 $transition-length: 0.2s;
+$alt-red: #c48b8b;
+$font-family: "Source Serif Pro", serif;
 
 /*
 =========================
@@ -16,6 +20,7 @@ Search Bar Styles
   justify-content: center;
   align-items: center;
   max-width: 400px;
+  font-family: $font-family;
 
   input[type="text"].search-input {
     border-radius: 5px;
@@ -46,7 +51,31 @@ Search Bar Styles
     }
   }
   .search-btn:disabled {
-    background-color: #c48b8b;
+    background-color: $alt-red;
+  }
+}
+
+/*
+=========================
+Warning Styles
+=========================
+*/
+.warning-wrapper {
+  font-family: $font-family;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  max-width: 400px;
+  background-color: $alt-red;
+  box-shadow: 2px 2px 2px white;
+  border-radius: 7px;
+  margin-top: 10px;
+  span {
+    color: #fff;
+    padding: 5px 0;
+    font-size: 12px;
+    font-family: $font-family;
   }
 }
 
@@ -102,6 +131,7 @@ Recipe Styles
 */
 
 .recipe-grid {
+  font-family: $font-family;
   .recipe-item {
     border: 1px solid $font-color;
     box-shadow: 2px 2px 2px $box-shadow;
@@ -180,6 +210,7 @@ Modal Styles
 */
 
 .modal-body-grid {
+  font-family: $font-family;
   display: grid;
   width: 100%;
   height: auto;

@@ -10,6 +10,7 @@ import FetchRecipes from "../dataFetch/FetchData";
 import SearchParams from "../models/SearchParams";
 import RecipePayload from "../models/RecipePayload";
 import Hit from "../models/Hit";
+import Warning from "./Recipe/Warning";
 
 export function Home() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -104,12 +105,15 @@ export function Home() {
         ) => handleSetModalToRecipe(e, recipe),
         clearModal: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) =>
           handleClearModal(e),
+        searchWarning: searchWarning,
+        setSearchWarning: (warn: string) => setSearchWarning(warn),
       }}
     >
       <div className="search-bar-wrapper">
         <RecipeSearch />
         <SearchButton />
       </div>
+      <Warning />
       <RecipeGrid />
     </AppContext.Provider>
   );

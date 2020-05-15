@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Serif+Pro&display=swap");
 /*
 =========================
 Search Bar Styles
@@ -8,7 +9,8 @@ Search Bar Styles
   width: 100%;
   justify-content: center;
   align-items: center;
-  max-width: 400px; }
+  max-width: 400px;
+  font-family: "Source Serif Pro", serif; }
   .search-bar-wrapper input[type="text"].search-input {
     border-radius: 5px;
     line-height: 30px;
@@ -34,6 +36,28 @@ Search Bar Styles
       background-color: #750c0c; }
   .search-bar-wrapper .search-btn:disabled {
     background-color: #c48b8b; }
+
+/*
+=========================
+Warning Styles
+=========================
+*/
+.warning-wrapper {
+  font-family: "Source Serif Pro", serif;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  max-width: 400px;
+  background-color: #c48b8b;
+  box-shadow: 2px 2px 2px white;
+  border-radius: 7px;
+  margin-top: 10px; }
+  .warning-wrapper span {
+    color: #fff;
+    padding: 5px 0;
+    font-size: 12px;
+    font-family: "Source Serif Pro", serif; }
 
 /*
 =========================
@@ -75,58 +99,60 @@ Loader Styles
 Recipe Styles
 =========================
 */
-.recipe-grid .recipe-item {
-  border: 1px solid #000;
-  box-shadow: 2px 2px 2px #a09090; }
-  @media only screen and (max-width: 768px) {
-    .recipe-grid .recipe-item {
-      /* if mobile, make the width smaller to fit the button */
-      max-width: 300px; } }
-  .recipe-grid .recipe-item .img-wrapper {
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    align-items: center; }
-    .recipe-grid .recipe-item .img-wrapper img {
-      width: 75%;
-      margin: 10px 0; }
-  .recipe-grid .recipe-item a.label {
-    color: #ce2737;
-    display: flex;
-    font-size: 1.5rem;
-    align-items: center;
-    justify-content: center;
-    transition: color 0.2s;
-    margin-bottom: 0.5rem; }
-    .recipe-grid .recipe-item a.label:hover {
-      color: #750c0c;
-      cursor: pointer;
-      text-decoration: none; }
-  .recipe-grid .recipe-item p.servings {
-    display: flex;
-    align-items: center;
-    justify-content: center; }
-  .recipe-grid .recipe-item .details {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center; }
-  .recipe-grid .recipe-item .btn-wrap {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%; }
-    .recipe-grid .recipe-item .btn-wrap button.seeMore {
-      border: transparent;
-      text-transform: uppercase;
-      background-color: #ce2737;
-      color: #fff;
-      border-radius: 5px;
-      padding: 5px 5px;
-      margin: 0 0 10px 0;
-      width: 50%;
-      transition: background-color 0.2s; }
-      .recipe-grid .recipe-item .btn-wrap button.seeMore:hover {
-        background-color: #750c0c; }
+.recipe-grid {
+  font-family: "Source Serif Pro", serif; }
+  .recipe-grid .recipe-item {
+    border: 1px solid #000;
+    box-shadow: 2px 2px 2px #a09090; }
+    @media only screen and (max-width: 768px) {
+      .recipe-grid .recipe-item {
+        /* if mobile, make the width smaller to fit the button */
+        max-width: 300px; } }
+    .recipe-grid .recipe-item .img-wrapper {
+      display: flex;
+      width: 100%;
+      justify-content: center;
+      align-items: center; }
+      .recipe-grid .recipe-item .img-wrapper img {
+        width: 75%;
+        margin: 10px 0; }
+    .recipe-grid .recipe-item a.label {
+      color: #ce2737;
+      display: flex;
+      font-size: 1.5rem;
+      align-items: center;
+      justify-content: center;
+      transition: color 0.2s;
+      margin-bottom: 0.5rem; }
+      .recipe-grid .recipe-item a.label:hover {
+        color: #750c0c;
+        cursor: pointer;
+        text-decoration: none; }
+    .recipe-grid .recipe-item p.servings {
+      display: flex;
+      align-items: center;
+      justify-content: center; }
+    .recipe-grid .recipe-item .details {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center; }
+    .recipe-grid .recipe-item .btn-wrap {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%; }
+      .recipe-grid .recipe-item .btn-wrap button.seeMore {
+        border: transparent;
+        text-transform: uppercase;
+        background-color: #ce2737;
+        color: #fff;
+        border-radius: 5px;
+        padding: 5px 5px;
+        margin: 0 0 10px 0;
+        width: 50%;
+        transition: background-color 0.2s; }
+        .recipe-grid .recipe-item .btn-wrap button.seeMore:hover {
+          background-color: #750c0c; }
 
 /*
 =========================
@@ -134,6 +160,7 @@ Modal Styles
 =========================
 */
 .modal-body-grid {
+  font-family: "Source Serif Pro", serif;
   display: grid;
   width: 100%;
   height: auto;

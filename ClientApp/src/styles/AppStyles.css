@@ -1,4 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Oswald:wght@400;500&display=swap");
+body {
+  font-family: "Oswald", sans-serif; }
+
 /*
 =========================
 Search Bar Styles
@@ -9,8 +12,7 @@ Search Bar Styles
   width: 100%;
   justify-content: center;
   align-items: center;
-  max-width: 400px;
-  font-family: "Oswald", sans-serif; }
+  max-width: 400px; }
   .search-bar-wrapper input[type="text"].search-input {
     border-radius: 5px;
     line-height: 30px;
@@ -43,7 +45,6 @@ Warning Styles
 =========================
 */
 .warning-wrapper {
-  font-family: "Oswald", sans-serif;
   display: flex;
   width: 100%;
   justify-content: center;
@@ -56,8 +57,7 @@ Warning Styles
   .warning-wrapper span {
     color: #fff;
     padding: 5px 0;
-    font-size: 12px;
-    font-family: "Oswald", sans-serif; }
+    font-size: 12px; }
 
 /*
 =========================
@@ -99,60 +99,58 @@ Loader Styles
 Recipe Styles
 =========================
 */
-.recipe-grid {
-  font-family: "Oswald", sans-serif; }
-  .recipe-grid .recipe-item {
-    border: 1px solid #000;
-    box-shadow: 2px 2px 2px #a09090; }
-    @media only screen and (max-width: 768px) {
-      .recipe-grid .recipe-item {
-        /* if mobile, make the width smaller to fit the button */
-        max-width: 300px; } }
-    .recipe-grid .recipe-item .img-wrapper {
-      display: flex;
-      width: 100%;
-      justify-content: center;
-      align-items: center; }
-      .recipe-grid .recipe-item .img-wrapper img {
-        width: 75%;
-        margin: 10px 0; }
-    .recipe-grid .recipe-item a.label {
-      color: #ce2737;
-      display: flex;
-      font-size: 1.5rem;
-      align-items: center;
-      justify-content: center;
-      transition: color 0.2s;
-      margin-bottom: 0.5rem; }
-      .recipe-grid .recipe-item a.label:hover {
-        color: #750c0c;
-        cursor: pointer;
-        text-decoration: none; }
-    .recipe-grid .recipe-item p.servings {
-      display: flex;
-      align-items: center;
-      justify-content: center; }
-    .recipe-grid .recipe-item .details {
-      display: flex;
-      justify-content: space-evenly;
-      align-items: center; }
-    .recipe-grid .recipe-item .btn-wrap {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 100%; }
-      .recipe-grid .recipe-item .btn-wrap button.seeMore {
-        border: transparent;
-        text-transform: uppercase;
-        background-color: #ce2737;
-        color: #fff;
-        border-radius: 5px;
-        padding: 5px 5px;
-        margin: 0 0 10px 0;
-        width: 50%;
-        transition: background-color 0.2s; }
-        .recipe-grid .recipe-item .btn-wrap button.seeMore:hover {
-          background-color: #750c0c; }
+.recipe-grid .recipe-item {
+  border: 1px solid #000;
+  box-shadow: 2px 2px 2px #a09090; }
+  @media only screen and (max-width: 768px) {
+    .recipe-grid .recipe-item {
+      /* if mobile, make the width smaller to fit the button */
+      max-width: 300px; } }
+  .recipe-grid .recipe-item .img-wrapper {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center; }
+    .recipe-grid .recipe-item .img-wrapper img {
+      width: 75%;
+      margin: 10px 0; }
+  .recipe-grid .recipe-item a.label {
+    color: #ce2737;
+    display: flex;
+    font-size: 1.5rem;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.2s;
+    margin-bottom: 0.5rem; }
+    .recipe-grid .recipe-item a.label:hover {
+      color: #750c0c;
+      cursor: pointer;
+      text-decoration: none; }
+  .recipe-grid .recipe-item p.servings {
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+  .recipe-grid .recipe-item .details {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center; }
+  .recipe-grid .recipe-item .btn-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; }
+    .recipe-grid .recipe-item .btn-wrap button.seeMore {
+      border: transparent;
+      text-transform: uppercase;
+      background-color: #ce2737;
+      color: #fff;
+      border-radius: 5px;
+      padding: 5px 5px;
+      margin: 0 0 10px 0;
+      width: 50%;
+      transition: background-color 0.2s; }
+      .recipe-grid .recipe-item .btn-wrap button.seeMore:hover {
+        background-color: #750c0c; }
 
 /*
 =========================
@@ -160,7 +158,6 @@ Modal Styles
 =========================
 */
 .modal-body-grid {
-  font-family: "Oswald", sans-serif;
   display: grid;
   width: 100%;
   height: auto;

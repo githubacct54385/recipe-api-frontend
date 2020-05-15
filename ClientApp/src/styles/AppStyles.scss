@@ -15,23 +15,30 @@ Search Bar Styles
   width: 100%;
   justify-content: center;
   align-items: center;
+  max-width: 400px;
 
   input[type="text"].search-input {
     border-radius: 5px;
     line-height: 30px;
     width: 280px;
     min-width: 100px;
+    flex: 3 1 280px;
+
+    @media only screen and (max-width: 768px) {
+      /* if mobile, make the width smaller to fit the button */
+      width: 200px;
+    }
   }
 
   .search-btn {
+    flex: 1 1 auto;
     height: 35px;
     border: transparent;
     text-transform: uppercase;
     background-color: $red;
     color: #fff;
     border-radius: 5px;
-    padding: 0 5px;
-    margin: 0 15px;
+    margin-left: 10px;
     width: auto;
     transition: background-color $transition-length;
     &:hover {
@@ -45,6 +52,51 @@ Search Bar Styles
 
 /*
 =========================
+Loader Styles
+=========================
+*/
+
+.loader-container {
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .loader-wrapper {
+    display: flex;
+    flex-direction: row;
+    height: 20px;
+    justify-content: center;
+    align-items: center;
+
+    .dot {
+      background-color: $red;
+      margin: 0 2.5px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      animation: shrink 1s ease-in-out infinite;
+      &:nth-of-type(2) {
+        animation-delay: 0.1s;
+      }
+      &:nth-of-type(3) {
+        animation-delay: 0.2s;
+      }
+    }
+  }
+
+  @keyframes shrink {
+    0%,
+    100% {
+      transform: scale(0);
+    }
+    50% {
+      transform: scale(1);
+    }
+  }
+}
+
+/*
+=========================
 Recipe Styles
 =========================
 */
@@ -53,6 +105,11 @@ Recipe Styles
   .recipe-item {
     border: 1px solid $font-color;
     box-shadow: 2px 2px 2px $box-shadow;
+
+    @media only screen and (max-width: 768px) {
+      /* if mobile, make the width smaller to fit the button */
+      max-width: 300px;
+    }
 
     .img-wrapper {
       display: flex;
@@ -145,12 +202,6 @@ Modal Styles
         color: #000;
       }
     }
-  }
-
-  .ingredients {
-  }
-
-  .instructions {
   }
 }
 

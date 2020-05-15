@@ -4,11 +4,21 @@ import AppContext from "../../context/AppContext";
 
 const SearchButton = () => {
   const { isSearching, searchTerm } = useContext(AppContext);
-  if (isSearching || searchTerm === "") {
+  if (isSearching === false && searchTerm === "") {
     return <DisabledButton />;
+  } else if (isSearching) {
+    return <SearchingButton />;
   } else {
     return <NormalButton />;
   }
+};
+
+const SearchingButton = () => {
+  return (
+    <button className="search-btn" disabled>
+      Searching...
+    </button>
+  );
 };
 
 const DisabledButton = () => {
@@ -20,9 +30,15 @@ const DisabledButton = () => {
 };
 
 const NormalButton = () => {
-  const { toggleSearch } = useContext(AppContext);
+  const { startSearch } = useContext(AppContext);
   return (
-    <button className="search-btn" onClick={(e) => toggleSearch(e)}>
+    <button
+      className="search-btn"
+      onClick={(e) => {
+        e.preventDefault();
+        startSearch();
+      }}
+    >
       Search
     </button>
   );

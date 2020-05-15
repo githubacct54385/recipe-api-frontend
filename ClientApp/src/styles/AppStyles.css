@@ -7,21 +7,27 @@ Search Bar Styles
   display: flex;
   width: 100%;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+  max-width: 400px; }
   .search-bar-wrapper input[type="text"].search-input {
     border-radius: 5px;
     line-height: 30px;
     width: 280px;
-    min-width: 100px; }
+    min-width: 100px;
+    flex: 3 1 280px; }
+    @media only screen and (max-width: 768px) {
+      .search-bar-wrapper input[type="text"].search-input {
+        /* if mobile, make the width smaller to fit the button */
+        width: 200px; } }
   .search-bar-wrapper .search-btn {
+    flex: 1 1 auto;
     height: 35px;
     border: transparent;
     text-transform: uppercase;
     background-color: #ce2737;
     color: #fff;
     border-radius: 5px;
-    padding: 0 5px;
-    margin: 0 15px;
+    margin-left: 10px;
     width: auto;
     transition: background-color 0.2s; }
     .search-bar-wrapper .search-btn:hover {
@@ -31,12 +37,51 @@ Search Bar Styles
 
 /*
 =========================
+Loader Styles
+=========================
+*/
+.loader-container {
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .loader-container .loader-wrapper {
+    display: flex;
+    flex-direction: row;
+    height: 20px;
+    justify-content: center;
+    align-items: center; }
+    .loader-container .loader-wrapper .dot {
+      background-color: #ce2737;
+      margin: 0 2.5px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      animation: shrink 1s ease-in-out infinite; }
+      .loader-container .loader-wrapper .dot:nth-of-type(2) {
+        animation-delay: 0.1s; }
+      .loader-container .loader-wrapper .dot:nth-of-type(3) {
+        animation-delay: 0.2s; }
+
+@keyframes shrink {
+  0%,
+  100% {
+    transform: scale(0); }
+  50% {
+    transform: scale(1); } }
+
+/*
+=========================
 Recipe Styles
 =========================
 */
 .recipe-grid .recipe-item {
   border: 1px solid #000;
   box-shadow: 2px 2px 2px #a09090; }
+  @media only screen and (max-width: 768px) {
+    .recipe-grid .recipe-item {
+      /* if mobile, make the width smaller to fit the button */
+      max-width: 300px; } }
   .recipe-grid .recipe-item .img-wrapper {
     display: flex;
     width: 100%;

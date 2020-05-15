@@ -3,10 +3,17 @@ import "../../styles/AppStyles.css";
 import RecipeModal from "./RecipeModal";
 import AppContext from "../../context/AppContext";
 import SingleRecipe from "./SingleRecipe";
+import Loader from "./Loader";
 
 const RecipeGrid = () => {
-  const { recipes, modalStatus } = useContext(AppContext);
-  if (recipes === undefined || recipes === null || recipes.length === 0) {
+  const { recipes, modalStatus, isSearching } = useContext(AppContext);
+
+  const noRecipes =
+    recipes === undefined || recipes === null || recipes.length === 0;
+
+  if (isSearching) {
+    return <Loader />;
+  } else if (noRecipes) {
     return null;
   }
   return (

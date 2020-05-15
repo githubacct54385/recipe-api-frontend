@@ -25,11 +25,7 @@ export function Home() {
 
   // event handlers
 
-  const handleSearchClick = async (
-    e: React.MouseEvent<HTMLButtonElement, MouseEvent>
-  ) => {
-    e.preventDefault();
-
+  const handleSearchClick = async () => {
     // reset search warning and set boolean searching flag to true
     setSearchWarning("");
     setIsSearching(true);
@@ -101,7 +97,7 @@ export function Home() {
         searchTerm: searchTerm,
         isSearching: isSearching,
         setSearchTerm: (searchTerm: string) => setSearchTerm(searchTerm),
-        toggleSearch: (e) => handleSearchClick(e),
+        startSearch: () => handleSearchClick(),
         setModalToRecipe: (
           e: React.MouseEvent<HTMLButtonElement, MouseEvent>,
           recipe: Recipe

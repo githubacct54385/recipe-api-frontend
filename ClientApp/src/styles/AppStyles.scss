@@ -127,6 +127,32 @@ Loader Styles
 
 /*
 =========================
+Paginate Button Styles
+=========================
+*/
+
+.paginate-btns {
+  button.left,
+  button.right {
+    background-color: $red;
+    margin: 0 2px;
+    padding: 5px 15px;
+    color: #fff;
+    border-radius: 15px;
+    border: 1px transparent;
+    transition: background-color 0.2s;
+    &:hover {
+      background-color: $hightlight-color;
+    }
+  }
+  button.left:disabled,
+  button.right:disabled {
+    background-color: $alt-red;
+  }
+}
+
+/*
+=========================
 Recipe Styles
 =========================
 */

@@ -12,6 +12,7 @@ import RecipePayload from "../models/RecipePayload";
 import Hit from "../models/Hit";
 import Warning from "./Recipe/Warning";
 import Pagination from "../models/pagination";
+import topFunction from "../utils/scrollToTop";
 
 export function Home() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -144,6 +145,9 @@ export function Home() {
         lastQuery: lastQuery,
       }}
     >
+      <button onClick={topFunction} id="myBtn" title="Go to top">
+        Scoll to top
+      </button>
       <div className="search-bar-wrapper">
         <RecipeSearch />
         <SearchButton />

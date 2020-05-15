@@ -9,22 +9,29 @@ Search Bar Styles
 */
 .search-bar-wrapper {
   display: flex;
+  flex-direction: row;
   width: 100%;
   justify-content: center;
   align-items: center;
   max-width: 400px; }
+  @media only screen and (max-width: 768px) {
+    .search-bar-wrapper {
+      /* if mobile, you want to wrap the button to the next line */
+      flex-wrap: wrap;
+      justify-content: flex-start; } }
   .search-bar-wrapper input[type="text"].search-input {
     border-radius: 5px;
     line-height: 30px;
-    width: 280px;
+    width: 300px;
     min-width: 100px;
-    flex: 3 1 280px; }
+    flex: 3 1 300px; }
     @media only screen and (max-width: 768px) {
       .search-bar-wrapper input[type="text"].search-input {
         /* if mobile, make the width smaller to fit the button */
-        width: 200px; } }
+        width: 100%;
+        flex: none; } }
   .search-bar-wrapper .search-btn {
-    flex: 1 1 auto;
+    flex: 0 1 70px;
     height: 35px;
     border: transparent;
     text-transform: uppercase;
@@ -34,6 +41,10 @@ Search Bar Styles
     margin-left: 10px;
     width: auto;
     transition: background-color 0.2s; }
+    @media only screen and (max-width: 768px) {
+      .search-bar-wrapper .search-btn {
+        /* if mobile, no extra margin is required */
+        margin-left: 0; } }
     .search-bar-wrapper .search-btn:hover {
       background-color: #750c0c; }
   .search-bar-wrapper .search-btn:disabled {

@@ -17,5 +17,6 @@ export default interface AppContextState {
   searchWarning: string;
   setSearchWarning: (warn: string) => void;
   pagination: Pagination;
+  handleRightPaginate: () => void;
   lastQuery: string;
 }

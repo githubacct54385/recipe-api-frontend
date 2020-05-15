@@ -27,7 +27,7 @@ const FetchRecipes = async (
 
 const GetBaseUrl = (): string => {
   return (
-    process.env.recipeApiEndpoint || "https://recipeapiapp.azurewebsites.net"
+    process.env.RECIPE_API_ENDPOINT || "https://recipeapiapp.azurewebsites.net"
   );
 };
 

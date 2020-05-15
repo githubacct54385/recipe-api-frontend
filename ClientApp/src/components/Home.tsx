@@ -33,6 +33,8 @@ export function Home() {
 
   // event handlers
 
+  const paginateRight = () => {};
+
   const handleSearchClick = async () => {
     // reset search warning and set boolean searching flag to true
     setSearchWarning("");
@@ -42,8 +44,8 @@ export function Home() {
     // get first ten
     const searchParams: SearchParams = {
       searchTerm: searchTerm,
-      from: pagination.from,
-      to: pagination.to,
+      from: 0,
+      to: getDefaultQueryAmount(),
     };
 
     // do search and retrieve from API
@@ -53,8 +55,20 @@ export function Home() {
     setIsSearching(false);
   };
 
+  const getDefaultQueryAmount = (): number => {
+    // get for azure config the default query amount for each recipe api call
+    // if undefined, set to 100
+    // maximum number that can be queied is 100
+    // this is defined by the Edamam API
+    let defaultQueryAmount = process.env.DEFAULT_QUERY_AMOUNT;
+    if (defaultQueryAmount === undefined) defaultQueryAmount = "100";
+
+    return parseInt(defaultQueryAmount);
+  };
+
   const handleResponse = (recipePayload: RecipePayload) => {
     // if hits length is > 0, you have recipes
+    setLastQuery(recipePayload.q);
     if (recipePayload.hits.length > 0) {
       setRecipesToState(recipePayload.hits);
       handleSetPagination(recipePayload);
@@ -67,7 +81,6 @@ export function Home() {
   };
 
   const handleSetPagination = (recipePayload: RecipePayload) => {
-    setLastQuery(recipePayload.q);
     setPagination({
       from: recipePayload.from,
       to: recipePayload.to,
@@ -127,6 +140,7 @@ export function Home() {
         searchWarning: searchWarning,
         setSearchWarning: (warn: string) => setSearchWarning(warn),
         pagination: pagination,
+        handleRightPaginate: () => paginateRight(),
         lastQuery: lastQuery,
       }}
     >

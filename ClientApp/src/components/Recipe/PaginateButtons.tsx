@@ -34,9 +34,10 @@ const LeftButton = (props: ButtonProps) => {
 };
 
 const RightButton = (props: ButtonProps) => {
+  const { handleRightPaginate } = useContext(AppContext);
   if (props.allowAction) {
     return (
-      <button className="right">
+      <button onClick={handleRightPaginate} className="right">
         <RightIcon />
       </button>
     );

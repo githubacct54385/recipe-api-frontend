@@ -44,7 +44,8 @@ Search Bar Styles
     @media only screen and (max-width: 768px) {
       .search-bar-wrapper .search-btn {
         /* if mobile, no extra margin is required */
-        margin-left: 0; } }
+        margin-left: 0;
+        margin-top: 10px; } }
     .search-bar-wrapper .search-btn:hover {
       background-color: #750c0c; }
   .search-bar-wrapper .search-btn:disabled {

@@ -4,6 +4,8 @@ import { Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
 import Recipe from "../../models/Recipe";
 import "../../styles/AppStyles.css";
 import Ingredient from "../../models/Ingredient";
+import RecipeAdvisories from "./RecipeAdvisories";
+import RecipeDetails from "./RecipeDetails";
 
 interface Props {
   recipe?: Recipe;
@@ -11,6 +13,9 @@ interface Props {
 
 const RecipeModal = (props: Props) => {
   const { modalStatus, clearModal } = useContext(AppContext);
+
+  if (props.recipe === undefined) return null;
+
   return (
     <div>
       <Modal
@@ -24,24 +29,20 @@ const RecipeModal = (props: Props) => {
         </ModalHeader>
         <ModalBody>
           <div className="modal-body-grid">
+            <div className="top-grid">
+              <div className="left">
+                <RecipeDetails recipe={props.recipe} />
+              </div>
+              <div className="right">
+                <RecipeAdvisories recipe={props.recipe} />
+              </div>
+            </div>
             <div className="ingredients">
               <p className="header">Ingredients</p>
               <ul>
                 {props.recipe?.ingredients.map((ingredient: Ingredient) => (
                   <li key={ingredient.id}>{ingredient.text}</li>
                 ))}
-              </ul>
-            </div>
-            <div className="instructions">
-              <p className="header">Instructions</p>
-              <ul>
-                <li>
-                  Heat an oven to 325°F. In a roasting pan (or a large (14-inch)
-                  oven-proof skillet), heat the olive oil over medium until
-                  shimmering. Add the potatoes and garlic and cook until golden
-                  brown, about 12 minutes. Remove to a plate, leaving behind as
-                  much oil as possible.
-                </li>
               </ul>
             </div>
           </div>

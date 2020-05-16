@@ -1,14 +1,12 @@
 import React from "react";
+import displayTotalTime from "../../utils/displayTotalTime";
 
 interface Props {
   totalTime: number;
 }
 
 const RecipeTotalTime = (props: Props) => {
-  if (props.totalTime === undefined || props.totalTime === 0) {
-    return <div className="totalTime">Total time is unavailable</div>;
-  }
-  return <div className="totalTime">{props.totalTime} minutes</div>;
+  return <div className="totalTime">{displayTotalTime(props.totalTime)}</div>;
 };
 
 export default RecipeTotalTime;

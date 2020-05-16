@@ -214,21 +214,6 @@ Recipe Styles
       }
     }
 
-    // a.label {
-    //   color: $red;
-    //   display: flex;
-    //   font-size: 1.5rem;
-    //   align-items: center;
-    //   justify-content: center;
-    //   transition: color $transition-length;
-    //   margin-bottom: 0.5rem;
-    //   &:hover {
-    //     color: $hightlight-color;
-    //     cursor: pointer;
-    //     text-decoration: none;
-    //   }
-    // }
-
     p.servings {
       display: flex;
       align-items: center;
@@ -271,14 +256,28 @@ Modal Styles
 */
 
 .modal-body-grid {
-  display: grid;
   width: 100%;
   height: auto;
-  grid-template-columns: 1fr 3fr;
   background-color: #fff;
 
-  .ingredients,
-  .instructions {
+  .top-grid {
+    display: flex;
+    height: auto;
+
+    .left {
+      flex: 1 1 33.3%;
+      display: grid;
+      grid-template-columns: 1fr;
+    }
+
+    .right {
+      flex: 1 1 66.6%;
+      display: grid;
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .ingredients {
     p.header {
       color: $red;
       font-size: 1.5rem;
@@ -288,9 +287,10 @@ Modal Styles
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
+      align-items: flex-start;
       li {
-        list-style: decimal outside;
-        color: #000;
+        flex: 1 1 100%;
+        list-style: square;
       }
     }
   }

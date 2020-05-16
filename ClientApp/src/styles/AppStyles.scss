@@ -188,9 +188,15 @@ Recipe Styles
       justify-content: center;
       align-items: center;
 
-      img {
-        width: 75%;
-        margin: 10px 0;
+      a {
+        display: inherit;
+        width: inherit;
+        justify-content: inherit;
+        align-items: inherit;
+        img {
+          width: 75%;
+          margin: 10px 0;
+        }
       }
     }
 
@@ -254,6 +260,22 @@ Recipe Styles
 Modal Styles
 =========================
 */
+
+h5.modal-title {
+  a {
+    color: $red;
+    font-size: 1.5rem;
+    text-align: center;
+    width: 75%;
+    transition: color $transition-length;
+    margin-bottom: 0.5rem;
+    &:hover {
+      color: $hightlight-color;
+      cursor: pointer;
+      text-decoration: none;
+    }
+  }
+}
 
 .modal-body-grid {
   width: 100%;

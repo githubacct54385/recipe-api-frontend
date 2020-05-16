@@ -12,7 +12,9 @@ const SingleRecipe = (props: SingleRecipeProps) => {
   return (
     <div className="recipe-item">
       <div className="img-wrapper">
-        <img src={props.recipe.image} alt={props.recipe.label} />
+        <a target="_blank" rel="noopener noreferrer" href={props.recipe.url}>
+          <img src={props.recipe.image} alt={props.recipe.label} />
+        </a>
       </div>
       <div className="link-wrapper">
         <a

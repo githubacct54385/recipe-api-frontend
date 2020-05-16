@@ -16,40 +16,41 @@ const RecipeModal = (props: Props) => {
 
   if (props.recipe === undefined) return null;
 
+  const { recipe } = props;
+
   return (
-    <div>
-      <Modal
-        size="lg"
-        centered={false}
-        isOpen={modalStatus.isOpen}
-        toggle={(e: any) => clearModal(e)}
-      >
-        <ModalHeader toggle={(e: any) => clearModal(e)}>
-          {props.recipe?.label}
-        </ModalHeader>
-        <ModalBody>
-          <div className="modal-body-grid">
-            <div className="top-grid">
-              <div className="left">
-                <RecipeDetails recipe={props.recipe} />
-              </div>
-              <div className="right">
-                <RecipeAdvisories recipe={props.recipe} />
-              </div>
+    <Modal
+      size="lg"
+      centered={false}
+      isOpen={modalStatus.isOpen}
+      toggle={(e: any) => clearModal(e)}
+    >
+      <ModalHeader toggle={(e: any) => clearModal(e)}>
+        <a target="_blank" rel="noopener noreferrer" href={recipe.url}>
+          {recipe.label}
+        </a>
+      </ModalHeader>
+      <ModalBody>
+        <div className="modal-body-grid">
+          <div className="top-grid">
+            <div className="left">
+              <RecipeDetails recipe={recipe} />
             </div>
-            <div className="ingredients">
-              <p className="header">Ingredients</p>
-              <ul>
-                {props.recipe?.ingredients.map((ingredient: Ingredient) => (
-                  <li key={ingredient.id}>{ingredient.text}</li>
-                ))}
-              </ul>
+            <div className="right">
+              <RecipeAdvisories recipe={recipe} />
             </div>
           </div>
-        </ModalBody>
-        <ModalFooter></ModalFooter>
-      </Modal>
-    </div>
+          <div className="ingredients">
+            <p className="header">Ingredients</p>
+            <ul>
+              {recipe.ingredients.map((ingredient: Ingredient) => (
+                <li key={ingredient.id}>{ingredient.text}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </ModalBody>
+    </Modal>
   );
 };
 

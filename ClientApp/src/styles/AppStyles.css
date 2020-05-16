@@ -145,9 +145,14 @@ Recipe Styles
     width: 100%;
     justify-content: center;
     align-items: center; }
-    .recipe-grid .recipe-item .img-wrapper img {
-      width: 75%;
-      margin: 10px 0; }
+    .recipe-grid .recipe-item .img-wrapper a {
+      display: inherit;
+      width: inherit;
+      justify-content: inherit;
+      align-items: inherit; }
+      .recipe-grid .recipe-item .img-wrapper a img {
+        width: 75%;
+        margin: 10px 0; }
   .recipe-grid .recipe-item .link-wrapper {
     display: flex;
     width: 100%;
@@ -195,6 +200,18 @@ Recipe Styles
 Modal Styles
 =========================
 */
+h5.modal-title a {
+  color: #ce2737;
+  font-size: 1.5rem;
+  text-align: center;
+  width: 75%;
+  transition: color 0.2s;
+  margin-bottom: 0.5rem; }
+  h5.modal-title a:hover {
+    color: #750c0c;
+    cursor: pointer;
+    text-decoration: none; }
+
 .modal-body-grid {
   width: 100%;
   height: auto;

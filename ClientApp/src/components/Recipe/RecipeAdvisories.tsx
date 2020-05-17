@@ -7,32 +7,35 @@ interface Props {
 
 const RecipeAdvisories = (props: Props) => {
   // helper functions
-  const arrToStr = (arr: string[]): string => {
+  const LabelsAsString = (arr: string[]): string => {
     if (arr.length === 0) return "N/A";
 
     let str = "";
     arr.map((strElement, index) => {
-      if (index !== arr.length - 1) {
-        str = str + withComma(strElement);
+      const notLastElement = index !== arr.length - 1;
+      if (notLastElement) {
+        str = AppendStringwithComma(str, strElement);
       } else {
-        str = str + withoutComma(strElement);
+        str = AppendStringWithoutComma(str, strElement);
       }
     });
     return str;
   };
 
-  const withComma = (str: string) => `${str}, `;
-  const withoutComma = (str: string) => `${str}`;
+  const AppendStringwithComma = (currStr: string, newStr: string) =>
+    currStr + `${newStr}, `;
+  const AppendStringWithoutComma = (currStr: string, newStr: string) =>
+    currStr + `${newStr}`;
   return (
     <Fragment>
       <div className="grid-item">
-        Diet Labels: {arrToStr(props.recipe.dietLabels)}
+        Diet Labels: {LabelsAsString(props.recipe.dietLabels)}
       </div>
       <div className="grid-item">
-        Cautions: {arrToStr(props.recipe.cautions)}
+        Cautions: {LabelsAsString(props.recipe.cautions)}
       </div>
       <div className="grid-item">
-        Health Labels: {arrToStr(props.recipe.healthLabels)}
+        Health Labels: {LabelsAsString(props.recipe.healthLabels)}
       </div>
     </Fragment>
   );

@@ -155,7 +155,7 @@ Paginate Button Styles
     color: #fff;
     border-radius: 15px;
     border: 1px transparent;
-    transition: background-color 0.2s;
+    transition: background-color $transition-length;
     &:hover {
       background-color: $hightlight-color;
     }
@@ -290,23 +290,21 @@ h5.modal-title {
     display: flex;
     height: auto;
 
-    .left {
-      flex: 1 1 33.3%;
+    .left,
+    .right {
       display: grid;
       grid-template-columns: 1fr;
+      .grid-item {
+        border: 1px solid #000;
+      }
+    }
+
+    .left {
+      flex: 1 1 33.3%;
     }
 
     .right {
       flex: 1 1 66.6%;
-      display: grid;
-      grid-template-columns: 1fr;
-    }
-
-    .left,
-    .right {
-      .grid-item {
-        border: 1px solid #000;
-      }
     }
   }
 

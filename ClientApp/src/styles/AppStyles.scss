@@ -212,12 +212,10 @@ Recipe Styles
         width: 75%;
         transition: color $transition-length;
         margin-bottom: 0.5rem;
-
-        /* text shorten rules*/
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
-        max-width: 200px; /*200px*/
+        max-width: 200px;
         &:hover {
           color: $hightlight-color;
           cursor: pointer;

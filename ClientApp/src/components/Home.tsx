@@ -34,8 +34,6 @@ export function Home() {
 
   // event handlers
 
-  const paginateRight = () => {};
-
   const handleSearchClick = async () => {
     // reset search warning and set boolean searching flag to true
     setSearchWarning("");
@@ -141,7 +139,6 @@ export function Home() {
         searchWarning: searchWarning,
         setSearchWarning: (warn: string) => setSearchWarning(warn),
         pagination: pagination,
-        handleRightPaginate: () => paginateRight(),
         lastQuery: lastQuery,
       }}
     >

@@ -25,9 +25,15 @@ const RecipeAdvisories = (props: Props) => {
   const withoutComma = (str: string) => `${str}`;
   return (
     <Fragment>
-      <div>Diet Labels: {arrToStr(props.recipe.dietLabels)}</div>
-      <div>Cautions: {arrToStr(props.recipe.cautions)}</div>
-      <div>Health Labels: {arrToStr(props.recipe.healthLabels)}</div>
+      <div className="grid-item">
+        Diet Labels: {arrToStr(props.recipe.dietLabels)}
+      </div>
+      <div className="grid-item">
+        Cautions: {arrToStr(props.recipe.cautions)}
+      </div>
+      <div className="grid-item">
+        Health Labels: {arrToStr(props.recipe.healthLabels)}
+      </div>
     </Fragment>
   );
 };

@@ -10,9 +10,9 @@ const RecipeDetails = (props: Props) => {
   const { calories, totalTime, source } = props.recipe;
   return (
     <Fragment>
-      <div>Calories: {calories.toFixed(2)}</div>
-      <div>{displayTotalTime(totalTime)}</div>
-      <div>Source: {source}</div>
+      <div className="grid-item">Calories: {calories.toFixed(2)}</div>
+      <div className="grid-item">{displayTotalTime(totalTime)}</div>
+      <div className="grid-item">Source: {source}</div>
     </Fragment>
   );
 };
